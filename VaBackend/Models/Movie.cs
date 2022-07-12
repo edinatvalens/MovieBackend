@@ -13,7 +13,6 @@ namespace VaBackend.Models
         public string ReleaseDate { get; set; }
         public DateTime AddedDate { get; set; }
         public string MoviePicture { get; set; }
-
         [ForeignKey(nameof(moviecategory))]
         public int Movie_Category_id { get; set; }
         public MovieCategory moviecategory { get; set; }
