@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "juZN7foa7dVyYyhEVytYLY/XtBMPGZYzXVjXw6TOKl/fHe6aHG/fTbsNw2EcOHndOdj5Gzzw14wexIoqO32eyw==",
+  "dgSpecHash": "olBneSCY4RO9OAeotZWuipDW6Iog8MdnCf5fSNgaYQC9ZCnXNUMvyRg1yICgqgh9cozo9TdPNPDBouYROQfXZQ==",
   "success": true,
-  "projectFilePath": "C:\\Users\\gondz\\Desktop\\Backend\\VaBackend\\VaBackend.csproj",
+  "projectFilePath": "C:\\Users\\gondz\\Documents\\GitHub\\ValensBackend\\VaBackend\\VaBackend.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\gondz\\.nuget\\packages\\bouncycastle.netcore\\1.8.3\\bouncycastle.netcore.1.8.3.nupkg.sha512",
     "C:\\Users\\gondz\\.nuget\\packages\\google.protobuf\\3.11.4\\google.protobuf.3.11.4.nupkg.sha512",

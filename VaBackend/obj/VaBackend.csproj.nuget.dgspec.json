@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\gondz\\Desktop\\Backend\\VaBackend\\VaBackend.csproj": {}
+    "C:\\Users\\gondz\\Documents\\GitHub\\ValensBackend\\VaBackend\\VaBackend.csproj": {}
   },
   "projects": {
-    "C:\\Users\\gondz\\Desktop\\Backend\\VaBackend\\VaBackend.csproj": {
+    "C:\\Users\\gondz\\Documents\\GitHub\\ValensBackend\\VaBackend\\VaBackend.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\gondz\\Desktop\\Backend\\VaBackend\\VaBackend.csproj",
+        "projectUniqueName": "C:\\Users\\gondz\\Documents\\GitHub\\ValensBackend\\VaBackend\\VaBackend.csproj",
         "projectName": "VaBackend",
-        "projectPath": "C:\\Users\\gondz\\Desktop\\Backend\\VaBackend\\VaBackend.csproj",
+        "projectPath": "C:\\Users\\gondz\\Documents\\GitHub\\ValensBackend\\VaBackend\\VaBackend.csproj",
         "packagesPath": "C:\\Users\\gondz\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\gondz\\Desktop\\Backend\\VaBackend\\obj\\",
+        "outputPath": "C:\\Users\\gondz\\Documents\\GitHub\\ValensBackend\\VaBackend\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\gondz\\AppData\\Roaming\\NuGet\\NuGet.Config",
