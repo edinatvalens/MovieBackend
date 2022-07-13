@@ -126,7 +126,7 @@ namespace VaBackend.Controllers
                 return Ok(_dbContext.Movie.Include(kp => kp.moviecategory).OrderByDescending(s => s.MovieName).ThenByDescending(s => s.MovieName).ToList());
             if (by == "year")
                 return Ok(_dbContext.Movie.Include(kp => kp.moviecategory).OrderBy(x=>x.ReleaseDate).ToList());
-            else return Ok("error");
+            else return Ok(_dbContext.Movie.Include(kp => kp.moviecategory).Where(x=> x.MovieName.Contains(by)).ToList());
         }
 
         public class CategoryAddVM
