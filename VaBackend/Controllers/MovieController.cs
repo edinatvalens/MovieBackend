@@ -74,17 +74,18 @@ namespace VaBackend.Controllers
         public bool EditMovie(int id, [FromBody] MovieAddVM x )
         {
 
-            Movie song = _dbContext.Movie.FirstOrDefault(s => s.Id == id);
+            Movie movie = _dbContext.Movie.FirstOrDefault(s => s.Id == id);
 
-            if (song == null)
+            if (movie == null)
                 return true;
 
-            song.MovieName = x.MovieName;
-            song.MovieUrl = x.MovieUrl;
-            song.MovieLenght = x.MovieLenght;
-            song.AddedDate = x.AddedDate;
-            song.ReleaseDate = x.ReleaseDate;
-            song.Movie_Category_id = x.Movie_Category_id;
+            movie.MovieName = x.MovieName;
+            movie.MovieUrl = x.MovieUrl;
+            movie.MovieLenght = x.MovieLenght;
+            movie.AddedDate = x.AddedDate;
+            movie.MovieDescription = x.MovieDescription;
+            movie.ReleaseDate = x.ReleaseDate;
+            movie.Movie_Category_id = x.Movie_Category_id;
 
             _dbContext.SaveChanges();
             return false;
@@ -118,6 +119,15 @@ namespace VaBackend.Controllers
         {
             return Ok(_dbContext.Movie.Include(kp => kp.moviecategory).FirstOrDefault(kp => kp.MovieName == name));
         }
+        [HttpGet]
+        public IActionResult Sort(string by)
+        {
+            if(by=="name")
+                return Ok(_dbContext.Movie.Include(kp => kp.moviecategory).OrderByDescending(s => s.MovieName).ThenByDescending(s => s.MovieName).ToList());
+            if (by == "year")
+                return Ok(_dbContext.Movie.Include(kp => kp.moviecategory).OrderBy(x=>x.ReleaseDate).ToList());
+            else return Ok("error");
+        }
 
         public class CategoryAddVM
         {
@@ -128,20 +138,7 @@ namespace VaBackend.Controllers
         }
 
 
-        [HttpGet]
-        public IActionResult GetByCategory([FromBody] CategoryAddVM x )
-        {
-            if(x.name!="" && x.year != "" && x.id != null)
-            return Ok(_dbContext.Movie.Include(kp => kp.moviecategory).Where(kp => kp.MovieName == x.name && kp.ReleaseDate==x.year && kp.Movie_Category_id == x.id));
-          
-            if (x.name == "" && x.year != "" && x.id != null)
-            return Ok(_dbContext.Movie.Include(kp => kp.moviecategory).Where(kp => kp.ReleaseDate == x.year && kp.Movie_Category_id == x.id));
 
-            if (x.name == "" && x.year == "" && x.id != null)
-                return Ok(_dbContext.Movie.Include(kp => kp.moviecategory).Where(kp => kp.Movie_Category_id == x.id));
-
-            else return Ok("Error");
-
-        }
+       
     }
 }

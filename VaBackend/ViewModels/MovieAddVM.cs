@@ -8,8 +8,10 @@ namespace VaBackend.ViewModels
         public string MovieName { get; set; }
         public string MovieUrl { get; set; }
         public string MovieLenght { get; set; }
+        public string MovieDescription { get; set; }
+
         public DateTime AddedDate { get; set; }
-        public string ReleaseDate { get; set; }
+        public DateTime ReleaseDate { get; set; }
         public IFormFile MoviePicture { get; set; }
         public int Movie_Category_id { get; set; }
     }
