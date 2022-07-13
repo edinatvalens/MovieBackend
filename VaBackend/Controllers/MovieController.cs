@@ -119,6 +119,15 @@ namespace VaBackend.Controllers
         {
             return Ok(_dbContext.Movie.Include(kp => kp.moviecategory).FirstOrDefault(kp => kp.MovieName == name));
         }
+
+        [HttpGet]
+        public IActionResult GetByCategoryName(string name)
+        {
+            var id = _dbContext.MovieCategory.FirstOrDefault(x => x.Name == name).Id;
+
+            return Ok(_dbContext.Movie.Include(kp => kp.moviecategory).Where(kp => kp.Movie_Category_id == id).ToList());
+        }
+
         [HttpGet]
         public IActionResult Sort(string by)
         {
