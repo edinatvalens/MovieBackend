@@ -17,23 +17,23 @@ namespace VaBackend.Controllers
             this._dbContext = dbContext;
         }
 
-        [HttpGet("{id}")]
-        public IActionResult Get(int id)
+        [HttpGet]
+        public IActionResult Get()
         {
-            return Ok(_dbContext.Favorites.ToList());
+            return Ok(_dbContext.Favorites.Include(x => x.movie).ToList());
         }
 
-        [HttpPost]
-        public bool Add([FromBody] FavoritesAddVM x)
+        [HttpPost("{id}")]
+        public bool Add(int id)
         {
             Favorites check = null;
-            check= _dbContext.Favorites.FirstOrDefault(a => a.MovieID == x.MovieID);
+            check= _dbContext.Favorites.FirstOrDefault(a => a.MovieID == id);
             if (check != null) return false;
 
             var newFav = new Favorites()
             {
-                MovieID = x.MovieID
-                
+                MovieID = id
+
             };
             _dbContext.Add(newFav);
             _dbContext.SaveChanges();
@@ -43,17 +43,17 @@ namespace VaBackend.Controllers
 
 
         [HttpDelete]
-        public ActionResult Delete( int idS)
+        public bool Delete( int idS)
         {
            
             Favorites fav = _dbContext.Favorites.FirstOrDefault(s=> s.MovieID==idS);
 
             if (fav == null)
-                return BadRequest("Incorrect ID");
+                return false;
 
             _dbContext.Remove(fav);
             _dbContext.SaveChanges();
-            return Ok(fav);
+            return true;
         }
     }
 }

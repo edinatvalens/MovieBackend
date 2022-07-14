@@ -263,3 +263,4 @@ C:\Users\gondz\Documents\GitHub\ValensBackend\VaBackend\obj\Debug\net5.0\VaBacke
 C:\Users\gondz\Documents\GitHub\ValensBackend\VaBackend\obj\Debug\net5.0\ref\VaBackend.dll
 C:\Users\gondz\Documents\GitHub\ValensBackend\VaBackend\obj\Debug\net5.0\VaBackend.pdb
 C:\Users\gondz\Documents\GitHub\ValensBackend\VaBackend\obj\Debug\net5.0\VaBackend.genruntimeconfig.cache
+C:\Users\gondz\Documents\GitHub\ValensBackend\VaBackend\obj\Debug\net5.0\VaBackend.csproj.AssemblyReference.cache
